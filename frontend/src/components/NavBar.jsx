@@ -88,7 +88,7 @@ const NavBar = () => {
               color='inherit'
               sx={{ fontSize: '1.2rem' }}
             >
-              로그인
+              Login
             </Button>
           ) : (
             <SignOut>
