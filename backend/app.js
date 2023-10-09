@@ -1,5 +1,6 @@
 import express from 'express';
 import mysql from 'mysql2';
+import cors from 'cors';
 
 const app = express();
 
@@ -20,6 +21,9 @@ db.connect((err) => {
   console.log('MySQL에 연결되었습니다.');
 });
 
+// CORS 미들웨어 추가
+app.use(cors());
+
 // Express 미들웨어 및 라우트 설정
 app.use(express.json());
 
@@ -36,7 +40,6 @@ app.get('/api/plants', (req, res) => {
 });
 
 // 서버 시작
-
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`서버가 포트 ${port}에서 실행 중입니다.`);
