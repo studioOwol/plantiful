@@ -13,7 +13,7 @@ const PlantCard = ({ selectedPlant }) => {
     return name ? 'img/' + name + '.png' : '';
   }
 
-  const imagePath = makeImage(selectedPlant.name);
+  const imagePath = selectedPlant ? makeImage(selectedPlant.name) : '';
 
   return (
     <div
@@ -34,12 +34,16 @@ const PlantCard = ({ selectedPlant }) => {
             alignItems: 'center',
           }}
         >
-          <CardMedia
-            component='img'
-            alt='plant image'
-            src={imagePath}
-            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-          />
+          {selectedPlant ? (
+            <CardMedia
+              component='img'
+              alt='plant image'
+              src={imagePath}
+              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+            />
+          ) : (
+            <PhotoLibrary />
+          )}
         </CardActionArea>
 
         <List>
