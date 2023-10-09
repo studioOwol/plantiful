@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Box } from '@mui/material';
+import { Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 
 function MainPage() {
@@ -10,11 +10,11 @@ function MainPage() {
   };
 
   return (
-    <Box
-      sx={{
+    <div
+      style={{
         display: 'flex',
-        justifyContent: 'flex-end', // 수평 가운데 정렬
-        alignItems: 'center', // 수직 가운데 정렬
+        justifyContent: 'flex-end',
+        alignItems: 'center',
       }}
     >
       <Button
@@ -32,7 +32,7 @@ function MainPage() {
       >
         등록
       </Button>
-    </Box>
+    </div>
   );
 }
 
