@@ -8,6 +8,7 @@ import axios from 'axios';
 const AddPage = () => {
   const [allPlantType, setAllPlantType] = useState([]);
   const [selectedPlant, setSelectedPlant] = useState(null);
+  const [waterInterval, setWaterInterval] = useState('');
 
   const url = `http://localhost:3000/api/plants`;
 
@@ -82,7 +83,11 @@ const AddPage = () => {
           value={selectedPlant}
           onChange={(event, newValue) => setSelectedPlant(newValue)}
         />
-        <PlantCard selectedPlant={selectedPlant} />
+        <PlantCard
+          selectedPlant={selectedPlant}
+          waterInterval={waterInterval}
+          onChange={(event, newValue) => setWaterInterval(newValue)}
+        />
       </div>
     </div>
   );
